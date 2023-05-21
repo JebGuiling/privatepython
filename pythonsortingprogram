@@ -1,7 +1,5 @@
 loop = True
 
-
-
 while loop == True:
 
     list = []
@@ -19,7 +17,7 @@ while loop == True:
               """)
         choice1= int(input("Please choose a type of sorting: "))
 
-        if choice1 >= 1:
+        if choice1 >= 1 and choice1 <= 7:
             if choice1 == 1:
                 for i in range(1, len(list)):
                     print(list)
@@ -194,6 +192,62 @@ while loop == True:
                 else:
                     loop == False
                     break
+            elif choice1 == 6:
+                def swap(list, i, j):
+                    list[i], list[j] = list[j], list[i]
+
+                def siftDown(list,i, upper):
+                    while(True):
+                        l, r = i*2+1, i*2+2
+                        if max(l, r) < upper:
+                            if list[i] >= max(list[l], list[r]): break
+                            elif list[l] > list[r]:
+                                swap(list, i, l)
+                                i = l
+                            else:
+                                swap(list, i , r)
+                                i = r
+
+                        elif l < upper:
+                            if list[l] > list[i]:
+                                swap(list, i, l)
+                                i = l
+                            else: break
+                        elif r < upper:
+                            if list[r] > list[i]:
+                                swap(list, i, r)
+                                i = r
+                            else: break
+                        else: break
+                def heapsort(list):
+                    for j in range((len(list)-2) // 2, -1, -1):
+                        siftDown(list, j, len(list))
+                    for end in range(len(list)-1,0, -1):
+                        swap(list, 0, end)
+                        siftDown(list, 0 , end)
+
+
+                print("""Do you want the list to be 
+                                         1. Ascending
+                                         2. Descending""")
+                choice2 = int(input("Input here: "))
+
+                if choice2 == 1:
+                    list.sort()
+                    print(list)
+                else:
+                    list.sort(reverse=True)
+                    print(list)
+
+                loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
+                if loop_input == 1:
+                    loop == True
+                else:
+                    loop == False
+                    break
+
+
+
         else:
             print("Please choose only from the menu")
     except:
