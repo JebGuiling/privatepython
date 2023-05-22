@@ -54,33 +54,31 @@ while loop == True:
                             if list[j] < list[min_num]:
                                 min_num = j
                         list[i], list[min_num] = list[min_num], list[i]
-                        print("""Do you want the list to be 
-                                    1. Ascending
-                                    2. Descending""")
-                        choice2 = int(input("Input here: "))
-                        if choice2 == 1:
-                            list.sort()
-                            print(list)
-                            loop2 = False
-                            break
-                        elif choice2 ==2:
-                            list.sort(reverse=True)
-                            print(list)
-                            loop2 = False
-                            break
-                        else:
-                            print("Invalid input, exiting")
-                            loop2 = True
-                            break
-                        loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
-                        if loop_input == 1:
-                            loop == True
-                        elif loop_input == 2:
-                            loop == False
-                            break
-                        else:
-                            print("Invalid input, exiting")
-                            break
+                    print("""Do you want the list to be 
+                                1. Ascending
+                                2. Descending""")
+                    choice2 = int(input("Input here: "))
+                    if choice2 == 1:
+                        list.sort()
+                        print(list)
+
+                    elif choice2 ==2:
+                        list.sort(reverse=True)
+                        print(list)
+                    else:
+                        print("Invalid input, exiting")
+                        loop2 = True
+                        break
+                    loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
+                    if loop_input == 1:
+                        loop == True
+
+                    elif loop_input == 2:
+                        loop == False
+                        break
+                    else:
+                        print("Invalid input, exiting")
+                        break
 
                 elif choice1 == 3:
                     indlength = len(list) -1
@@ -92,28 +90,28 @@ while loop == True:
                             if list[i] > list[i+1]:
                                 sorted = False
                                 list[i], list[i+1] = list[i+1], list[i]
-                        print("""Do you want the list to be 
-                            1. Ascending
-                            2. Descending""")
-                        choice2 = int(input("Input here: "))
+                    print("""Do you want the list to be 
+                        1. Ascending
+                        2. Descending""")
+                    choice2 = int(input("Input here: "))
 
-                        if choice2 == 1:
-                            list.sort()
-                            print(list)
-                        elif choice2 == 2:
-                            list.sort(reverse=True)
-                            print(list)
-                        else:
-                            print("Invalid input, exiting.")
-                            break
-                        loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
-                        if loop_input == 1:
-                            loop == True
-                        elif loop_input == 2:
-                            loop == False
-                            break
-                        else:
-                            print("Invalid input, exiting")
+                    if choice2 == 1:
+                        list.sort()
+                        print(list)
+                    elif choice2 == 2:
+                        list.sort(reverse=True)
+                        print(list)
+                    else:
+                        print("Invalid input, exiting.")
+                        break
+                    loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
+                    if loop_input == 1:
+                        loop == True
+                    elif loop_input == 2:
+                        loop == False
+                        break
+                    else:
+                        print("Invalid input, exiting")
                 elif choice1 == 4:
                     if len(list) > 1:
                         left_list = list[:len(list) // 2]
@@ -138,27 +136,28 @@ while loop == True:
                             list[k] = right_list[j]
                             j += 1
                             k += 1
-                            print("""Do you want the list to be 
-                                1. Ascending
-                                2. Descending""")
-                            choice2 = int(input("Input here: "))
-                            if choice2 == 1:
-                                list.sort()
-                                print(list)
-                            elif choice2 == 2:
-                                list.sort(reverse=True)
-                                print(list)
-                            else:
-                                print("Invalid input, exiting.")
-                                break
-                            loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
-                            if loop_input == 1:
-                                loop == True
-                            elif loop_input == 2:
-                                loop == False
-                                break
-                            else:
-                                print("Invalid input, exiting.")
+                    print("""Do you want the list to be 
+                        1. Ascending
+                        2. Descending""")
+                    choice2 = int(input("Input here: "))
+                    if choice2 == 1:
+                        list.sort()
+                        print(list)
+                    elif choice2 == 2:
+                        list.sort(reverse=True)
+                        print(list)
+                    else:
+                        print("Invalid input, exiting.")
+                        break
+                    loop_input = int(input("Do you want to input again?: [1]Yes or [2] No: "))
+                    if loop_input == 1:
+                        loop == True
+                    elif loop_input == 2:
+                        loop == False
+                        break
+                    else:
+                        print("Invalid input, exiting.")
+                        break
                 elif choice1 == 5:
                     def quicksort(list,left, right):
                         if left < right:
